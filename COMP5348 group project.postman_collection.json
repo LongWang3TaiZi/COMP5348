@@ -1,0 +1,1408 @@
+{
+	"info": {
+		"_postman_id": "c2fe3cf8-31b0-40d3-ac89-cc637c9f47ca",
+		"name": "COMP5348 group project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27736170"
+	},
+	"item": [
+		{
+			"name": "Store User",
+			"item": [
+				{
+					"name": "Register user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"admin@admin.com\",\n    \"username\":\"admin\",\n    \"password\":\"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/comp5348/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comp5348",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"emailOrUsername\":\"1@test.com\",\n    \"password\":\"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/comp5348/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comp5348",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\":{\n        \"email\": \"1@test.com\",\n        \"password\":\"123\"\n    },\n    \"address\":{\n        \"country\": \"AU\",\n        \"state\": \"NSW\",\n        \"city\": \"Sydney\",\n        \"postCode\": 2000,\n        \"address\": \"123 street\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/comp5348/user/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comp5348",
+								"user",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Email",
+			"item": [
+				{
+					"name": "send email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"emailAddress\": \"123@test.com\",\n    \"message\": \"PickUp\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5888/comp5348/email/send",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5888",
+							"path": [
+								"comp5348",
+								"email",
+								"send"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Store Product",
+			"item": [
+				{
+					"name": "get all products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/comp5348/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comp5348",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get product by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/comp5348/products/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comp5348",
+								"products",
+								"9"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create product",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/liuyihang/Downloads/iphone16.jpg"
+								},
+								{
+									"key": "product",
+									"value": "{\n    \"name\": \"Iphone 88888 Pro Max\",\n    \"description\": \"new Iphone\",\n    \"price\":10\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/comp5348/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comp5348",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assign product to warehouse",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"assignments\": [\n    {\n      \"warehouseId\": 1,\n      \"quantity\": 5\n    },\n    {\n      \"warehouseId\": 2,\n      \"quantity\": 5\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/comp5348/products/1/assign",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comp5348",
+								"products",
+								"1",
+								"assign"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Iphone 16 Pro Max - Update\",\n    \"description\": \"new Iphone - Update\",\n    \"price\":88\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/comp5348/products/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comp5348",
+								"products",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/comp5348/products/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comp5348",
+								"products",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "get all products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/comp5348/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"comp5348",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get product by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/comp5348/products/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"comp5348",
+								"products",
+								"11"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create product",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Iphone 16 Pro Max\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/comp5348/products/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"comp5348",
+								"products",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assign product to warehouse",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"assignments\": [\n    {\n      \"warehouseId\": 3,\n      \"quantity\": 100\n    },\n    {\n      \"warehouseId\": 4,\n      \"quantity\": 50\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/comp5348/products/2/assign",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"comp5348",
+								"products",
+								"2",
+								"assign"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Iphone 16 Pro Max - Update\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/comp5348/products/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"comp5348",
+								"products",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/comp5348/products/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"comp5348",
+								"products",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Warehouse",
+			"item": [
+				{
+					"name": "get all warehouses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/comp5348/warehouses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"comp5348",
+								"warehouses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get and update available warehouses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/comp5348/warehouses/available/11/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"comp5348",
+								"warehouses",
+								"available",
+								"11",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get warehouses by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/comp5348/warehouses/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"comp5348",
+								"warehouses",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "carete warehouse",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"warehouse1\",\n    \"location\": \"location1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/comp5348/warehouses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"comp5348",
+								"warehouses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update warehouse",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"warehouse1\",\n    \"location\": \"location1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/comp5348/warehouses/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"comp5348",
+								"warehouses",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unhold warehosue product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"inventoryTransactionIds\": [\n        21\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/comp5348/warehouses/unhold",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"comp5348",
+								"warehouses",
+								"unhold"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete warehouse",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/comp5348/warehouses/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"comp5348",
+								"warehouses",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assign product to warehous",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"assignments\": [\n    {\n      \"warehouseId\": 15,\n      \"quantity\": 2\n    },\n    {\n      \"warehouseId\": 4,\n      \"quantity\": 6\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/comp5348/products/11/assign",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"comp5348",
+								"products",
+								"11",
+								"assign"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Store Warehouse",
+			"item": [
+				{
+					"name": "get all warehouses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/comp5348/warehouses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comp5348",
+								"warehouses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get warehouses by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/comp5348/warehouses/17",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comp5348",
+								"warehouses",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "carete warehouse",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"warehouse2\",\n    \"location\": \"location2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/comp5348/warehouses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comp5348",
+								"warehouses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update warehouse",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"warehouse14\",\n    \"location\": \"location14\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/comp5348/warehouses/14",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"comp5348",
+								"warehouses",
+								"14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete warehouse",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/comp5348/warehouses/14",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"comp5348",
+								"warehouses",
+								"14"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Delivery",
+			"item": [
+				{
+					"name": "create delivery order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"user@example.com\",\n  \"userName\": \"test user\",\n  \"toAddress\": \"123 Main Street, Sydney\",\n  \"fromAddress\": [\n    \"Warehouse A\",\n    \"Warehouse B\"\n  ],\n  \"productName\": \"Iphone 888 PRO MAX\",\n  \"quantity\": 5,\n  \"webhookUrl\": \"http://localhost:8080/comp5348/webhook\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1888/comp5348/deliveryCo/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1888",
+							"path": [
+								"comp5348",
+								"deliveryCo",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create delivery order batch",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"email\": \"user@example.com\",\n        \"userName\": \"test user\",\n        \"toAddress\": \"123 Main Street, Sydney\",\n        \"fromAddress\": [\n            \"Warehouse A\",\n            \"Warehouse B\"\n        ],\n        \"productName\": \"Iphone 888 PRO MAX\",\n        \"quantity\": 5,\n        \"webhookUrl\": \"http://localhost:8080/comp5348/\"\n    },\n    {\n        \"email\": \"user@example.com\",\n        \"userName\": \"test user\",\n        \"toAddress\": \"123\",\n        \"fromAddress\": [\n            \"Warehouse 1\",\n            \"Warehouse 2\"\n        ],\n        \"productName\": \"Iphone 1888 PRO MAX\",\n        \"quantity\": 1,\n        \"webhookUrl\": \"http://localhost:8080/comp5348/\"\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1888/comp5348/deliveryCo/create/batch",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1888",
+							"path": [
+								"comp5348",
+								"deliveryCo",
+								"create",
+								"batch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get delivery order by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1888/comp5348/deliveryCo/1152",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1888",
+							"path": [
+								"comp5348",
+								"deliveryCo",
+								"1152"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all order by email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1888/comp5348/deliveryCo/all/1@test.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1888",
+							"path": [
+								"comp5348",
+								"deliveryCo",
+								"all",
+								"1@test.com"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "create Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\":202,\n    \"productId\": 5, \n    \"quantity\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/comp5348/order/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comp5348",
+								"order",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dispatch Order",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/comp5348/order/dispatch/1502",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comp5348",
+								"order",
+								"dispatch",
+								"1502"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all orders by userId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/comp5348/order/all/202",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comp5348",
+								"order",
+								"all",
+								"202"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get order by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/comp5348/order/1402",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comp5348",
+								"order",
+								"1402"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/comp5348/order/pay/1152",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comp5348",
+								"order",
+								"pay",
+								"1152"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancel order",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/comp5348/order/cancel/1152",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comp5348",
+								"order",
+								"cancel",
+								"1152"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bank",
+			"item": [
+				{
+					"name": "Create account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"test user\",\n    \"email\": \"testUser@comp5348.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6888/comp5348/bank/account/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6888",
+							"path": [
+								"comp5348",
+								"bank",
+								"account",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get account by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"admin\",\n    \"email\": \"admin@comp5348.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6888/comp5348/bank/account/17296842113692747",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6888",
+							"path": [
+								"comp5348",
+								"bank",
+								"account",
+								"17296842113692747"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get txn by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6888/comp5348/bank/transaction/152",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6888",
+							"path": [
+								"comp5348",
+								"bank",
+								"transaction",
+								"152"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get txns by from account email",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"admin\",\n    \"email\": \"admin@comp5348.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6888/comp5348/bank/transaction/all/testUser@comp5348.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6888",
+							"path": [
+								"comp5348",
+								"bank",
+								"transaction",
+								"all",
+								"testUser@comp5348.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Topup",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": 1000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6888/comp5348/bank/account/topUp/17300132590858740",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6888",
+							"path": [
+								"comp5348",
+								"bank",
+								"account",
+								"topUp",
+								"17300132590858740"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create transaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\" : 1000,\n    \"fromAccount\": \"17293489431620940\",\n    \"toAccount\": \"17293466599035283\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6888/comp5348/bank/transaction/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6888",
+							"path": [
+								"comp5348",
+								"bank",
+								"transaction",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refund",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6888/comp5348/bank/transaction/refund/603",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6888",
+							"path": [
+								"comp5348",
+								"bank",
+								"transaction",
+								"refund",
+								"603"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "charge back",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6888/comp5348/bank/transaction/charge-back/623",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6888",
+							"path": [
+								"comp5348",
+								"bank",
+								"transaction",
+								"charge-back",
+								"623"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Store Delivery",
+			"item": [
+				{
+					"name": "get delivery information by orderId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/comp5348/order/delivery/detail/1252",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comp5348",
+								"order",
+								"delivery",
+								"detail",
+								"1252"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get deliveries by user emal",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/comp5348/order/delivery/testUser@comp5348.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comp5348",
+								"order",
+								"delivery",
+								"testUser@comp5348.com"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "webhook",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"deliveryOrderId\": 1152,\n    \"deliveryStatus\": \"CREATED\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/comp5348/webhook",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comp5348",
+						"webhook"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
