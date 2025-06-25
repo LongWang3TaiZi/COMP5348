@@ -1,0 +1,61 @@
+.App {
+    font-family: Arial, sans-serif;
+  }
+  
+  
+.home, .orders, .delivery {
+  padding: 2rem;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card {
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.product-detail-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-image {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+.product-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.product-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.product-description {
+  margin-bottom: 1rem;
+}
+
+.product-quantity {
+  margin-bottom: 1rem;
+}
+
+.purchase-button {
+  width: 100%;
+}
+
+.update-container {
+  display: grid;
+  justify-content: center;
+}

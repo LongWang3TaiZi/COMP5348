@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  form {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 400px;
+  }
