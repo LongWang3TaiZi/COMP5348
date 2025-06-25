@@ -1,4 +1,4 @@
-# COMP 5348 Group Project
+# COMP 5348 Project
 
 # Table of Contents
 
