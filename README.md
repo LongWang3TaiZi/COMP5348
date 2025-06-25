@@ -24,15 +24,15 @@ The system consists of 6 main components.
 
 **For backend side, there are 5 projects:**
 
-- [**backend**](https://github.sydney.edu.au/COMP5348-projects/Practice-06-Group-01/tree/main/backend) - store’s backend service, the frontend will only interact with this project.
-- [**bank**](https://github.sydney.edu.au/COMP5348-projects/Practice-06-Group-01/tree/main/bank) - bank service provide ability to make a transaction.
-- [**deliveryCo**](https://github.sydney.edu.au/COMP5348-projects/Practice-06-Group-01/tree/main/deliveryCo) - delivery service provide ability to delivery products to the customer.
-- [**email**](https://github.sydney.edu.au/COMP5348-projects/Practice-06-Group-01/tree/main/email) - email service provide ability to stimulate send email notifications.
-- [**warehouse**](https://github.sydney.edu.au/COMP5348-projects/Practice-06-Group-01/tree/main/warehouse) - warehouse service provide ability to store the product.
+- [**backend**](https://github.com/LongWang3TaiZi/COMP5348/tree/main/backend) - store’s backend service, the frontend will only interact with this project.
+- [**bank**](https://github.com/LongWang3TaiZi/COMP5348/tree/main/bank) - bank service provide ability to make a transaction.
+- [**deliveryCo**](https://github.com/LongWang3TaiZi/COMP5348/tree/main/deliveryCo) - delivery service provide ability to delivery products to the customer.
+- [**email**](https://github.com/LongWang3TaiZi/COMP5348/tree/main/email) - email service provide ability to stimulate send email notifications.
+- [**warehouse**](https://github.com/LongWang3TaiZi/COMP5348/tree/main/warehouse) - warehouse service provide ability to store the product.
 
 **For frontend side, there is only 1 project**:
 
-- [**front-end-ui**](https://github.sydney.edu.au/COMP5348-projects/Practice-06-Group-01/tree/main/front-end-ui) - basic frontend ui code, provide ability to customer to interact with our online store website.
+- [**front-end-ui**](https://github.com/LongWang3TaiZi/COMP5348/tree/main/front-end-ui) - basic frontend ui code, provide ability to customer to interact with our online store website.
 
 Our service architecture utilizes RESTful APIs to manage interactions and data flows. To ensure fault tolerance and handle specific tasks such as email notifications and delivery status updates, we have adopted RabbitMQ. This setup enables us to improve the reliability and efficiency of services, effectively decouple system components, and ensure reliable handling of critical messages even in the event of partial system failures.
 
@@ -222,7 +222,7 @@ If you encounter any problems during setup or while running the application, ple
    - Query a Single Transaction
    - Query All Transaction on an Account
 
-Please refer to this [wiki](https://github.sydney.edu.au/COMP5348-projects/Practice-06-Group-01/wiki/Bank) for more detailed information
+Please refer to this [wiki](https://github.com/LongWang3TaiZi/COMP5348/wiki/Bank) for more detailed information
 
 ## DeliveryCo
    - Create a Delivery Order
@@ -230,9 +230,9 @@ Please refer to this [wiki](https://github.sydney.edu.au/COMP5348-projects/Pract
    - Query Individual Delivery Order
    - Query All Delivery Orders of the User
 
-Please refer to this [wiki](https://github.sydney.edu.au/COMP5348-projects/Practice-06-Group-01/wiki/deliveryCo) for more detailed information
+Please refer to this [wiki](https://github.com/LongWang3TaiZi/COMP5348/wiki/deliveryCo) for more detailed information
 
 ## Email
    - Send Email
 
-Please refer to this [wiki](https://github.sydney.edu.au/COMP5348-projects/Practice-06-Group-01/wiki/Email-service) for more detailed information
+Please refer to this [wiki](https://github.com/LongWang3TaiZi/COMP5348/wiki/Email-service) for more detailed information
